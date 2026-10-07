@@ -22,7 +22,7 @@ function card(p, i) {
   const hue = HUES[p.hue];
   if (p.soon) {
     return `
-    <article class="pcard pcard--soon" data-cat="${p.category}" data-hue="${p.hue}" data-price="" style="--hue:${hue.hex}">
+    <article class="pcard pcard--soon" data-cat="${p.category}" data-hue="${p.hue}" data-price="" style="--hue:${hue.hex};--hue-ink:${hue.ink}">
       <div class="pcard__frame">
         <div class="pcard__media" data-cursor="Soon">
           ${img(p.images[0], { cls: 'pcard__img' })}
@@ -37,7 +37,7 @@ function card(p, i) {
     </article>`;
   }
   return `
-  <article class="pcard" data-id="${p.id}" data-cat="${p.category}" data-hue="${p.hue}" data-price="${p.price}" style="--hue:${hue.hex}">
+  <article class="pcard" data-id="${p.id}" data-cat="${p.category}" data-hue="${p.hue}" data-price="${p.price}" style="--hue:${hue.hex};--hue-ink:${hue.ink}">
     <div class="pcard__frame" data-tilt="5">
       <a href="#/product/${p.id}" class="pcard__media" data-cursor="View" aria-label="${esc(p.name)}">
         ${img(p.images[0], { alt: p.name, cls: 'pcard__img' })}
@@ -192,7 +192,7 @@ const home = {
     <ul class="hues__list">
       ${Object.entries(HUES).map(([k, h], i) => `
         <li>
-          <a class="hues__row" href="#/shop?hue=${k}" data-hue="${k}" style="--c:${h.hex}" data-cursor="Shop">
+          <a class="hues__row" href="#/shop?hue=${k}" data-hue="${k}" style="--c:${h.hex};--ci:${h.ink}" data-cursor="Shop">
             <span class="hues__n mono">${pad(i + 1)}</span>
             <span class="hues__name">${h.label}</span>
             <span class="hues__note mono">${h.note}</span>
@@ -422,8 +422,8 @@ const home = {
           gl.u.open = 0;
           g.to(gl.u, { open: 1, duration: 1.8, ease: 'expo.inOut' });
         }
-        g.from(hero.querySelectorAll('.hero__word .ch'), { yPercent: 110, opacity: 0, duration: 1.4, ease: 'expo.out', stagger: 0.06, delay: 0.25 });
-        g.from(hero.querySelectorAll('.hero__word--ghost .ch'), { opacity: 0, duration: 1.2, delay: 1 });
+        g.from(hero.querySelectorAll('.hero__word:not(.hero__word--ghost) .ch'), { yPercent: 110, opacity: 0, duration: 1.4, ease: 'expo.out', stagger: 0.06, delay: 0.25 });
+        g.fromTo(hero.querySelectorAll('.hero__word--ghost .ch'), { opacity: 0 }, { opacity: 1, duration: 1.2, stagger: 0.06, delay: 1 });
         g.from(hero.querySelectorAll('.hud, .hero__copy > *, .hero__slides, .hero__scroll'), { opacity: 0, y: 24, duration: 1, ease: 'expo.out', stagger: 0.07, delay: 0.7 });
         g.from(hero.querySelector('.hero__halo'), { opacity: 0, scale: 0.6, duration: 1.8, ease: 'expo.out', delay: 0.6 });
         runAuto();
@@ -458,7 +458,7 @@ const shop = {
           ${categories.map((c) => `<button type="button" class="chip ${c === cat ? 'is-active' : ''}" data-cat="${c}" aria-pressed="${c === cat}">${c}<sup class="mono">${c === 'All' ? products.length : products.filter((p) => p.category === c).length}</sup></button>`).join('')}
         </div>
         <div class="filters__group filters__hues">
-          ${Object.entries(HUES).map(([k, h]) => `<button type="button" class="hue-btn ${k === hue ? 'is-active' : ''}" data-hue="${k}" style="--c:${h.hex}" aria-pressed="${k === hue}"><i></i><span class="mono">${h.label}</span></button>`).join('')}
+          ${Object.entries(HUES).map(([k, h]) => `<button type="button" class="hue-btn ${k === hue ? 'is-active' : ''}" data-hue="${k}" style="--c:${h.hex};--ci:${h.ink}" aria-pressed="${k === hue}"><i></i><span class="mono">${h.label}</span></button>`).join('')}
         </div>
         <label class="sort mono">Sort
           <select data-sort>
@@ -552,7 +552,7 @@ const product = {
     const fill = products.filter((x) => x.id !== p.id && !x.soon && !related.includes(x));
     const more = [...related, ...fill].slice(0, 3);
     return `
-    <section class="pdp" style="--hue:${hue.hex}" data-pdp>
+    <section class="pdp" style="--hue:${hue.hex};--hue-ink:${hue.ink}" data-pdp>
       <div class="pdp__gallery">
         ${p.images.map((im, i) => `
           <figure class="pdp__shot" data-zoom data-cursor="${p.soon ? 'Soon' : 'Zoom'}">
@@ -709,7 +709,7 @@ const storyView = {
     ${label('Names', 'Every piece carries a name')}
     <div class="names__grid">
       ${products.map((p) => `
-        <a class="name-card" href="#/product/${p.id}" style="--c:${HUES[p.hue].hex}" data-reveal data-tilt="6">
+        <a class="name-card" href="#/product/${p.id}" style="--c:${HUES[p.hue].hex};--ci:${HUES[p.hue].ink}" data-reveal data-tilt="6">
           <span class="mono">${p.ref}</span>
           <h3>${p.name.split(' ')[0]}</h3>
           <p>${p.meaning}</p>

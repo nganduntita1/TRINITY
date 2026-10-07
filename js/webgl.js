@@ -84,7 +84,7 @@ void main() {
   // glowing rim + soft halo
   float rim = exp(-abs(d) * 0.55) * uRim;
   float halo = exp(-max(d, 0.0) * 0.012) * 0.16 * uRim * (1.0 - mask);
-  vec3 rimCol = mix(vec3(0.94, 0.91, 0.87), vec3(0.3, 0.45, 1.0), 0.45 + 0.35 * sin(uTime * 0.6 + luv.y * 4.0));
+  vec3 rimCol = mix(vec3(0.55, 0.65, 1.0), vec3(0.18, 0.36, 1.0), 0.5 + 0.4 * sin(uTime * 0.6 + luv.y * 4.0));
 
   vec3 outc = col * mask + rimCol * rim * 0.85 + vec3(0.18, 0.3, 0.9) * halo;
   float a = clamp(mask + rim * 0.85 + halo, 0.0, 1.0);

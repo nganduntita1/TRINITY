@@ -1,4 +1,5 @@
 // Catalogue + editorial content.
+// HUES: hex = the swatch colour, ink = a darker tone that stays readable as text on the light background.
 // Names, taglines and descriptions are drafted from @trinityby_ob captions.
 // PRICES ARE PLACEHOLDERS (CAD) — confirm with the brand before launch.
 // `draft: true` marks a product whose name was not published by the brand.
@@ -6,10 +7,10 @@
 export const IG_URL = 'https://www.instagram.com/trinityby_ob/';
 
 export const HUES = {
-  brown: { label: 'Brown', hex: '#b06a33', note: 'Grounded. Rooted. Warm.' },
-  green: { label: 'Green', hex: '#3fae8f', note: 'Growth in full colour.' },
-  white: { label: 'White', hex: '#efe9df', note: 'Quiet confidence.' },
-  blue: { label: 'Blue', hex: '#2f5bff', note: 'Sunday best, every day.' }
+  brown: { label: 'Brown', hex: '#b06a33', ink: '#9a5824', note: 'Grounded. Rooted. Warm.' },
+  green: { label: 'Green', hex: '#3fae8f', ink: '#1f8466', note: 'Growth in full colour.' },
+  white: { label: 'White', hex: '#efe9df', ink: '#8a7c64', note: 'Quiet confidence.' },
+  blue: { label: 'Blue', hex: '#2f5bff', ink: '#2f5bff', note: 'Sunday best, every day.' }
 };
 
 export const SIZES = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
