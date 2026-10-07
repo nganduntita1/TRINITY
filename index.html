@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>TRINITY by OB — Flourish Collection</title>
+  <meta name="description" content="Award-winning unisex ready-to-wear from Toronto. Modest, intentional pieces designed for your becoming — shop the Flourish Collection.">
+  <meta name="theme-color" content="#08090b">
+  <meta property="og:title" content="TRINITY by OB — Flourish Collection">
+  <meta property="og:description" content="Unisex. Modest. Intentional ready-to-wear designed for your becoming.">
+  <meta property="og:image" content="assets/img/look-duo-lg.webp">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='50' fill='%2308090b'/%3E%3Cg transform='translate(20 18) scale(.6)' fill='none' stroke='%23efe9df' stroke-width='5'%3E%3Cpath d='M14 50V16l18 17 18-21 18 21 18-17v34z'/%3E%3C/g%3E%3Cpath fill='%23efe9df' d='M28 52h44v7H54v22h-8V59H28z'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/look-duo-lg.webp">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.className = 'js'; history.scrollRestoration = 'manual';</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body class="is-loading">
+
+  <!-- Icon sprite + logo -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="logo" viewBox="0 0 100 100">
+      <g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="miter">
+        <path class="logo__crown" d="M14 50V16l18 17 18-21 18 21 18-17v34z"/>
+        <path class="logo__crown" d="M21.5 43.5V31l10.7 10.2L50 21.4l17.8 19.8L78.5 31v12.5z"/>
+      </g>
+      <path class="logo__t" fill="currentColor" d="M14 56h72v12H58v28H42V68H14z"/>
+    </symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1.1 11.6a2 2 0 0 1-2 1.9H8.1a2 2 0 0 1-2-1.9L5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-l" viewBox="0 0 24 24"><path d="M20 12H4M10 6l-6 6 6 6"/></symbol>
+    <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 9h16M4 15h16"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 1c.5 5.6 5.4 10.5 11 11-5.6.5-10.5 5.4-11 11-.5-5.6-5.4-10.5-11-11C6.6 11.5 11.5 6.6 12 1z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></symbol>
+  </svg>
+
+  <!-- Preloader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__cols"><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="loader__inner">
+      <svg class="loader__logo" viewBox="0 0 100 100">
+        <g fill="none" stroke="currentColor" stroke-width="3.4">
+          <path class="logo__crown" d="M14 50V16l18 17 18-21 18 21 18-17v34z"/>
+          <path class="logo__crown" d="M21.5 43.5V31l10.7 10.2L50 21.4l17.8 19.8L78.5 31v12.5z"/>
+        </g>
+        <path class="logo__t" fill="currentColor" d="M14 56h72v12H58v28H42V68H14z"/>
+      </svg>
+      <div class="loader__meta mono">
+        <span>TRINITY // FLOURISH</span>
+        <span class="loader__bar"><i></i></span>
+        <span class="loader__count">000</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page transition curtain -->
+  <div class="curtain" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i>
+    <svg class="curtain__logo"><use href="#logo"/></svg>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__ring"><span class="cursor__label mono">View</span></div>
+    <div class="cursor__dot"></div>
+  </div>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="hdr">
+    <a href="#/" class="hdr__logo" aria-label="Trinity by OB — home" data-magnetic>
+      <svg><use href="#logo"/></svg>
+      <span>TRINITY</span>
+    </a>
+    <nav class="hdr__nav" aria-label="Primary">
+      <a href="#/shop" data-scramble data-nav="shop">Shop</a>
+      <a href="#/lookbook" data-scramble data-nav="lookbook">Lookbook</a>
+      <a href="#/story" data-scramble data-nav="story">Story</a>
+    </nav>
+    <div class="hdr__actions">
+      <a class="hdr__ig" href="https://www.instagram.com/trinityby_ob/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico"><use href="#i-ig"/></svg></a>
+      <button class="bag-btn" type="button" data-open-bag aria-label="Open bag" data-magnetic>
+        <svg class="ico"><use href="#i-bag"/></svg>
+        <span class="bag-btn__label mono">Bag</span>
+        <span class="bag-count mono" data-bag-count>0</span>
+      </button>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" data-menu-toggle>
+        <svg class="ico"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__links">
+      <a href="#/"><span class="mono">00</span>Home</a>
+      <a href="#/shop"><span class="mono">01</span>Shop</a>
+      <a href="#/lookbook"><span class="mono">02</span>Lookbook</a>
+      <a href="#/story"><span class="mono">03</span>Story</a>
+    </nav>
+    <div class="menu__foot mono">
+      <a href="https://www.instagram.com/trinityby_ob/" target="_blank" rel="noopener">@trinityby_ob ↗</a>
+      <span>Toronto, CA</span>
+    </div>
+  </div>
+
+  <main id="app" tabindex="-1"></main>
+
+  <!-- Footer -->
+  <footer class="ftr">
+    <div class="ftr__top">
+      <div class="ftr__col">
+        <p class="mono ftr__label">[ Trinity by OB ]</p>
+        <p class="ftr__lede">Award-winning unisex ready-to-wear. Promoting modesty’s appeal &amp; a safe space for faith expression and belonging.</p>
+      </div>
+      <div class="ftr__col">
+        <p class="mono ftr__label">Navigate</p>
+        <a href="#/shop" data-scramble>Shop all</a>
+        <a href="#/lookbook" data-scramble>Lookbook</a>
+        <a href="#/story" data-scramble>Why Flourish</a>
+        <a href="#/checkout" data-scramble>Bag &amp; checkout</a>
+      </div>
+      <div class="ftr__col">
+        <p class="mono ftr__label">Connect</p>
+        <a href="https://www.instagram.com/trinityby_ob/" target="_blank" rel="noopener" data-scramble>Instagram ↗</a>
+        <span>Toronto, Canada</span>
+      </div>
+    </div>
+    <div class="ftr__big" aria-hidden="true">
+      <span>T</span><span>R</span><span>I</span><span>N</span><span>I</span><span>T</span><span>Y</span>
+    </div>
+    <div class="ftr__bottom mono">
+      <span>© 2026 Trinity by OB</span>
+      <span>Designed for your becoming</span>
+      <button type="button" class="ftr__top-btn" data-scroll-top>Back to top ↑</button>
+    </div>
+  </footer>
+
+  <!-- Bag drawer -->
+  <div class="drawer" id="bag" aria-hidden="true">
+    <div class="drawer__scrim" data-close-bag></div>
+    <aside class="drawer__panel" role="dialog" aria-modal="true" aria-labelledby="bag-title">
+      <div class="drawer__head">
+        <h2 id="bag-title">Your bag <sup class="mono" data-bag-count>0</sup></h2>
+        <button class="icon-btn" type="button" data-close-bag aria-label="Close bag"><svg class="ico"><use href="#i-close"/></svg></button>
+      </div>
+      <div class="drawer__ship">
+        <p class="mono" data-ship-msg></p>
+        <div class="drawer__ship-bar"><i data-ship-bar></i></div>
+      </div>
+      <div class="drawer__items" data-bag-items></div>
+      <div class="drawer__foot">
+        <div class="drawer__row"><span class="mono">Subtotal</span><strong data-bag-subtotal>$0</strong></div>
+        <p class="drawer__note mono">Taxes &amp; shipping calculated at checkout · CAD</p>
+        <a href="#/checkout" class="btn btn--holo btn--block" data-checkout-link><span>Checkout</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+      </div>
+    </aside>
+  </div>
+
+  <div class="toast mono" role="status" aria-live="polite"></div>
+</body>
+</html>

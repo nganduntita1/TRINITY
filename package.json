@@ -1,0 +1,12 @@
+{
+  "name": "trinity-store",
+  "version": "0.1.0",
+  "private": true,
+  "description": "TRINITY by OB — animated storefront for the Flourish collection",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "images": "node scripts/process-images.mjs"
+  }
+}
