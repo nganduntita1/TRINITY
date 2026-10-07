@@ -115,11 +115,6 @@ const home = {
         ${heroSlides.map((s, i) => img(s.img, { alt: s.title, cls: i === 0 ? 'is-active' : '', eager: i === 0, sizes: '40vw' })).join('')}
       </button>
       <div class="hero__word hero__word--ghost" aria-hidden="true">${chars('TRINITY')}</div>
-      <svg class="hero__halo" viewBox="0 0 600 160" aria-hidden="true">
-        <ellipse cx="300" cy="80" rx="290" ry="58"/>
-        <ellipse cx="300" cy="80" rx="250" ry="40" class="hero__halo-b"/>
-        <circle r="3.5" class="hero__orbiter"><animateMotion dur="9s" repeatCount="indefinite" path="M10,80 a290,58 0 1,0 580,0 a290,58 0 1,0 -580,0"/></circle>
-      </svg>
     </div>
     <div class="hero__hud">
       <div class="hud hud--tl mono"><span>[ Flourish — Collection 01 ]</span><span>Unisex · Modest · RTW</span></div>
@@ -335,7 +330,7 @@ const home = {
           tl.to(c, { xPercent: dir * dist * 60, opacity: 0, ease: 'power2.in', duration: 0.8 }, 0);
         });
       });
-      tl.to(hero.querySelectorAll('.hud, .hero__copy, .hero__slides, .hero__scroll, .hero__halo'), { opacity: 0, y: -30, duration: 0.4, stagger: 0.02 }, 0);
+      tl.to(hero.querySelectorAll('.hud, .hero__copy, .hero__slides, .hero__scroll'), { opacity: 0, y: -30, duration: 0.4, stagger: 0.02 }, 0);
     }
 
     // --- Marquee with scroll-velocity boost
@@ -425,7 +420,6 @@ const home = {
         g.from(hero.querySelectorAll('.hero__word:not(.hero__word--ghost) .ch'), { yPercent: 110, opacity: 0, duration: 1.4, ease: 'expo.out', stagger: 0.06, delay: 0.25 });
         g.fromTo(hero.querySelectorAll('.hero__word--ghost .ch'), { opacity: 0 }, { opacity: 1, duration: 1.2, stagger: 0.06, delay: 1 });
         g.from(hero.querySelectorAll('.hud, .hero__copy > *, .hero__slides, .hero__scroll'), { opacity: 0, y: 24, duration: 1, ease: 'expo.out', stagger: 0.07, delay: 0.7 });
-        g.from(hero.querySelector('.hero__halo'), { opacity: 0, scale: 0.6, duration: 1.8, ease: 'expo.out', delay: 0.6 });
         runAuto();
       },
       destroy() {
